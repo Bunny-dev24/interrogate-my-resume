@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yash-1.8B — Interrogate My Resume</title>
+<style>
+:root{--bg:#0b0e14;--panel:#121722;--line:#1f2736;--txt:#d6dbe5;--mut:#7d8797;--acc:#5ee1a1;--acc2:#f5c35b;--red:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+a{color:var(--acc)}header{padding:28px 32px;border-bottom:1px solid var(--line)}
+h1{margin:0;font-size:26px}h1 span{color:var(--acc)}.tag{color:var(--mut);margin-top:6px}
+nav{display:flex;gap:6px;padding:10px 32px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+nav button{background:none;border:1px solid var(--line);color:var(--txt);padding:6px 14px;cursor:pointer;border-radius:4px}
+nav button.on{border-color:var(--acc);color:var(--acc)}
+section{display:none;padding:24px 32px}section.on{display:block}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:16px;margin-bottom:14px}
+.card h3{margin:0 0 8px;color:var(--acc2);font-size:13px;text-transform:uppercase;letter-spacing:1px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:900px){.grid,.chatwrap{grid-template-columns:1fr!important}}
+table{width:100%;border-collapse:collapse}td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{color:var(--mut);font-weight:normal}
+.chatwrap{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;height:72vh}
+.chat{display:flex;flex-direction:column}.msgs{flex:1;overflow:auto;padding-right:6px}
+.m{margin:10px 0;padding:10px 12px;border-radius:6px;max-width:92%;white-space:pre-wrap}
+.m.u{background:#1a2234;margin-left:auto}.m.b{background:#0f1a14;border:1px solid #1d3a2a}
+.m.b.nev{background:#1f1212;border-color:#4a1f1f}
+.chip{display:inline-block;border:1px solid var(--acc);color:var(--acc);border-radius:10px;padding:0 7px;font-size:11px;margin:2px 3px 0 0;cursor:pointer}
+.in{display:flex;gap:8px;margin-top:10px}input,textarea{flex:1;background:#0e131c;border:1px solid var(--line);color:var(--txt);padding:10px;font:inherit;border-radius:4px}
+button.go{background:var(--acc);color:#000;border:0;padding:10px 16px;cursor:pointer;border-radius:4px;font-weight:bold}
+.ret{overflow:auto}.step{margin-bottom:12px}.step b{color:var(--acc2)}
+.chunk{border:1px solid var(--line);border-radius:4px;padding:8px;margin:6px 0;font-size:12px}
+.chunk.hl{border-color:var(--acc);background:#0f1a14}.bar{height:5px;background:#1f2736;border-radius:3px;margin-top:4px}.bar i{display:block;height:100%;background:var(--acc)}
+.sug{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.sug span{border:1px dashed var(--mut);padding:3px 8px;font-size:12px;cursor:pointer;border-radius:4px;color:var(--mut)}
+.ok{color:var(--acc)}.bad{color:var(--red)}.big{font-size:40px;color:var(--acc)}
+.mut{color:var(--mut)}footer{padding:16px 32px;color:var(--mut);border-top:1px solid var(--line);font-size:12px}
+</style></head>
+<body>
+<header>
+<h1>Yash-1.8B <span>// Generative AI Engineer</span></h1>
+<div class="tag">Don't read my resume. <b style="color:var(--txt)">Interrogate it.</b> &nbsp;·&nbsp; Noida, IN · <a href="https://github.com/Bunny-dev24">github/Bunny-dev24</a> · <a href="https://medium.com/@Yash_Bhardwaj">medium</a> · yashaidev01@gmail.com</div>
+</header>
+<nav>
+<button class="on" data-t="card">Model Card</button><button data-t="chat">Interrogate</button><button data-t="fit">Fit Score</button><button data-t="eval">Evals</button><button data-t="set">Settings</button>
+</nav>
+
+<section id="card" class="on">
+<div class="grid">
+<div class="card"><h3>Model details</h3>
+<table><tr><th>Model</th><td>Yash-1.8B (1.8 years of production training)</td></tr>
+<tr><th>Architecture</th><td>Human, transformer-literate. Builds attention from scratch in NumPy.</td></tr>
+<tr><th>Current checkpoint</th><td>Associate Data Scientist (AI/ML Engineer), SoftSensor.ai — 05/2025 → present</td></tr>
+<tr><th>Previous checkpoint</th><td>AI Engineer, Sroniyan Technologies — 08/2024 → 04/2025</td></tr>
+<tr><th>Pre-training</th><td>BSc (Hons) Computer Science, Galgotias University, 2020–2023</td></tr>
+<tr><th>Certified</th><td>Microsoft Azure AI Apps and Agents Developer Associate</td></tr></table></div>
+<div class="card"><h3>Benchmarks (production)</h3>
+<table><tr><th>Credit-report generation</th><td>12–16 h → 8–12 min (<b class="ok">95% faster</b>), 200+ fields @ 95–98%</td></tr>
+<tr><th>Voice bots</th><td>5,000+ calls/mo, <b class="ok">&lt;2s latency</b>, 85–90% automation</td></tr>
+<tr><th>Discharge summaries</th><td>300+ records, 92% accuracy, 60+ staff-hours saved</td></tr>
+<tr><th>YOLOv8 e-signature (pharma)</th><td>96% accuracy, 91% P/R, CFR 21 Part 11</td></tr>
+<tr><th>CrewAI research agent</th><td>8–10× faster research</td></tr></table></div>
+<div class="card"><h3>Training data (skills)</h3>
+<div class="mut">Inference:</div> vLLM, PagedAttention, KV-cache, continuous batching, speculative decoding, INT4/INT8, CUDA, GQA, RoPE, SwiGLU<br>
+<div class="mut">GenAI:</div> RAG, LangChain, LangGraph, LlamaIndex, CrewAI, MCP, LoRA/QLoRA, PEFT<br>
+<div class="mut">CV/NLP:</div> Whisper, Vosk, Ultravox, YOLOv8, OCR, OpenCV, spaCy<br>
+<div class="mut">MLOps:</div> FastAPI, Docker, K8s, AWS, Azure AI, pgvector, Pinecone, FAISS, Milvus, Databricks</div>
+<div class="card"><h3>Limitations &amp; intended use</h3>
+• 1.8 years — not a 10-year architect, and won't pretend to be.<br>• Stable Diffusion from scratch is in progress, not done.<br>• This bot only answers from resume + project docs. Anything else → "no evidence".<br><br><b>Intended use:</b> GenAI / LLM Engineer roles — RAG, agents, inference optimisation, voice AI.<br><b>Out of scope:</b> pure frontend, pure data-analyst roles.</div>
+</div>
+<div class="card"><h3>Flagship open-source</h3><b>nanoinfer</b> — vLLM/TGI-class LLM inference engine from first principles: hand-written Qwen2/Llama transformer (HF-verified logit parity to 7B), PagedAttention, Orca-style continuous batching with preemption, speculative decoding, custom INT8/INT4, OpenAI-compatible SSE server, benchmark harness (TTFT/TPOT/p50-p99). No external inference libs.</div>
+</section>
+
+<section id="chat">
+<div class="chatwrap">
+<div class="card chat"><div class="msgs" id="msgs"><div class="m b">Ask anything about my work. Every answer is grounded in retrieved chunks (see right panel). If it's not in my sources, I'll say so.</div></div>
+<div class="sug" id="sug"></div>
+<div class="in"><input id="q" placeholder="e.g. Did he deploy anything to production?"><button class="go" onclick="ask()">Ask</button><button class="go" style="background:var(--acc2)" onclick="share()">Share</button></div></div>
+<div class="card ret" id="ret"><h3>Retrieval panel</h3><div class="mut">Waiting for a query…</div></div>
+</div>
+</section>
+
+<section id="fit">
+<div class="card"><h3>Fit score — paste a job description</h3>
+<textarea id="jd" rows="7" placeholder="Paste JD here…"></textarea>
+<div class="in"><button class="go" onclick="fit()">Score fit</button></div></div>
+<div id="fitout"></div>
+</section>
+
+<section id="eval">
+<div class="card"><h3>Retrieval eval — runs live in your browser, not pre-computed</h3>
+<div class="mut">Metric: hit@3 — is the expected source chunk inside the top-3 retrieved? Plus guardrail check on off-topic questions.</div>
+<div class="in"><button class="go" onclick="runEval()">Run eval</button></div></div>
+<div id="evalout"></div>
+</section>
+
+<section id="set">
+<div class="card"><h3>Optional: real LLM generation</h3>
+<div class="mut">Default mode is extractive (zero backend). Add any OpenAI-compatible endpoint to generate fluent answers over the retrieved context. Keys stay in your browser (localStorage).</div><br>
+<input id="ep" placeholder="Endpoint e.g. https://routellm.abacus.ai/v1/chat/completions"><br><br>
+<input id="key" placeholder="API key" type="password"><br><br>
+<input id="model" placeholder="Model e.g. route-llm"><br><br>
+<button class="go" onclick="saveSet()">Save</button></div>
+</section>
+<footer>Built by Yash Bhardwaj. No template, no framework — one HTML file, client-side TF-IDF retrieval with reranking and a refusal threshold. View source; that's the point.</footer>
+
+<script>
+// ---------- KNOWLEDGE BASE (chunks straight from resume) ----------
+const KB=[
+{id:"exp-ss-1",src:"SoftSensor.ai · 2025",t:"Built a GPT-4 Vision document-intelligence pipeline that cut credit-report generation from 12-16 hours to 8-12 minutes (95% faster), extracting 200+ fields at 95-98% accuracy. Deployed in production."},
+{id:"exp-ss-2",src:"SoftSensor.ai · 2025",t:"Shipped 2 production voice bots (Ultravox + Twilio + GPT-4o) handling 5,000+ automated calls per month at under 2 second latency and 85-90% automation, replacing 95% of manual dispatcher effort. Voice AI, STT TTS, real-time."},
+{id:"exp-ss-3",src:"SoftSensor.ai · 2025",t:"Automated discharge-summary generation for 300+ patient records via a 5-step OCR pipeline (Nanonets + GPT-4 + DBSCAN) at 92% accuracy, saving 60+ hours of clinical staff time. Healthcare, medical documents."},
+{id:"exp-ss-4",src:"SoftSensor.ai · 2025",t:"Delivered YOLOv8 e-signature detection for pharma (CFR 21 Part 11 compliance) at 96% accuracy and 91% precision-recall. Computer vision, object detection."},
+{id:"exp-ss-5",src:"SoftSensor.ai · 2025",t:"Built a CrewAI multi-agent research system cutting research time 8-10x. Agentic workflows, multi-agent orchestration, LangGraph."},
+{id:"exp-ss-6",src:"SoftSensor.ai · 2025",t:"Engineered end-to-end ETL on Databricks with Medallion architecture (bronze silver gold, Delta Lake, PySpark), data-quality gates and LLM-based validation for second-opinion checks on non-linear data patterns. Data engineering."},
+{id:"exp-sr-1",src:"Sroniyan Technologies · 2024-25",t:"Designed, developed and deployed end-to-end AI applications using Flask, ensuring scalability and integration across use cases. Remote AI Engineer role, August 2024 to April 2025."},
+{id:"exp-sr-2",src:"Sroniyan Technologies · 2024-25",t:"Built intelligent bots: Audio RAG with Whisper speech-to-text, Selenium web-scraping bots, and sales chatbots powered by OpenAI LLMs and embedding pipelines."},
+{id:"exp-sr-3",src:"Sroniyan Technologies · 2024-25",t:"Managed embeddings with ChromaDB, Pinecone and FAISS vector databases, optimizing query pipelines for faster and more accurate retrieval. RAG, semantic search."},
+{id:"proj-nano-1",src:"Project · nanoinfer",t:"nanoinfer: production-grade LLM inference engine from scratch in PyTorch and CUDA. Hand-written Qwen2 and Llama transformer with RMSNorm, RoPE, Grouped-Query Attention, SwiGLU, HuggingFace-verified logit parity up to 7B parameters. PagedAttention KV-cache, Orca-style continuous batching with preemption, speculative decoding, custom INT8 and INT4 quantization. No external inference libraries like vLLM or TGI. github.com/Bunny-dev24"},
+{id:"proj-nano-2",src:"Project · nanoinfer",t:"nanoinfer exposes an OpenAI-compatible streaming server (SSE) with FastAPI plus a full benchmark harness measuring throughput, TTFT, TPOT, p50 and p99 latency and GPU memory, comparing every optimization head-to-head against HuggingFace and vLLM."},
+{id:"proj-fin",src:"Project · FinGuard AI",t:"FinGuard AI: production-grade fraud detection system and ML pipeline with end-to-end deployment and MLOps, documented in a published Medium deep-dive article. github.com/Bunny-dev24/Finguard-ai"},
+{id:"proj-llm",src:"Project · from scratch",t:"Built a working LLM and multi-head self-attention from scratch in pure NumPy; currently implementing Stable Diffusion (diffusion models, image generation) from scratch. github.com/Bunny-dev24/mini-LLM-from-scratch"},
+{id:"skills-inf",src:"Skills",t:"LLM inference and serving skills: vLLM, PagedAttention, KV-cache optimization, continuous batching, speculative decoding, INT4 INT8 quantization weight-only group-wise, CUDA, grouped-query attention, RoPE, RMSNorm, SwiGLU, safetensors, OpenAI-compatible streaming SSE, benchmarking TTFT TPOT p50 p99."},
+{id:"skills-gen",src:"Skills",t:"LLM and GenAI skills: RAG, prompt engineering, LangChain, LangGraph, LlamaIndex, multi-agent CrewAI, MCP, knowledge graphs, OpenAI, Claude, Azure OpenAI, LoRA, QLoRA, PEFT, fine-tuning."},
+{id:"skills-cv",src:"Skills",t:"Computer vision and NLP skills: embeddings, semantic search, speech-to-text and text-to-speech Whisper Vosk Ultravox, spaCy, OCR Nanonets LandingAI PyMuPDF, OpenCV, object detection, YOLOv8, ViTs, CNNs, RNN LSTM, Stable Diffusion, PyTorch, TensorFlow, Hugging Face Transformers."},
+{id:"skills-ops",src:"Skills",t:"MLOps and cloud skills: FastAPI, Flask, Docker, CI/CD, Git, Kubernetes, vector databases pgvector ChromaDB FAISS Pinecone Milvus, AWS Bedrock S3 EC2 ECS Fargate EKS, Azure AI. Languages and databases: Python, SQL, PostgreSQL, MongoDB, Redis. Data engineering: Databricks, PySpark, Delta Lake, Kafka, ETL."},
+{id:"edu",src:"Education",t:"BSc (Hons) Computer Science, Galgotias University, 2020-2023. Certification: Microsoft Certified Azure AI Apps and Agents Developer Associate. Based in Noida, Uttar Pradesh, India."},
+{id:"summary",src:"Summary",t:"Generative AI Engineer with 1.8+ years of experience shipping production LLM and GenAI applications: RAG pipelines, agentic workflows, voice AI, NLP and computer vision. Delivered 9+ projects at SoftSensor.ai. Total experience about two years across two companies."}
+];
+const SYN={deploy:"production shipped deployed",deployed:"production shipped",prod:"production",ship:"shipped production",experience:"years",exp:"years experience",voice:"voice calls stt tts",speech:"voice whisper stt",vector:"vectordatabases chromadb pinecone faiss",finetune:"lora qlora peft fine-tuning",finetuning:"lora qlora peft",quantization:"int8 int4",serving:"inference vllm",llm:"llm inference transformer",agent:"agentic crewai langgraph multi-agent",agents:"agentic crewai langgraph multi-agent",cv:"vision yolov8 detection",vision:"computer vision yolov8 opencv",ocr:"ocr nanonets documents",healthcare:"patient clinical discharge",medical:"patient clinical",latency:"latency ttft tpot",metrics:"accuracy latency",college:"university bsc education",degree:"bsc university education",certified:"certification azure",cert:"certification",cloud:"aws azure kubernetes docker",github:"github project",opensource:"github project",scratch:"from scratch numpy",pipeline:"pipeline etl",data:"databricks etl pyspark",where:"noida location based",location:"noida based",live:"production shipped",company:"softsensor sroniyan",companies:"softsensor sroniyan",job:"softsensor sroniyan role",work:"softsensor sroniyan"};
+const STOP=new Set("the a an of to in is he his has have did do does any what which how many much with and or for on at by from about me about his he's does it that this there are was were be been any some".split(" "));
+const tok=s=>s.toLowerCase().replace(/[^a-z0-9+#.\- ]/g," ").split(/\s+/).filter(w=>w&&!STOP.has(w)).map(w=>w.replace(/[.\-]+$/,""));
+const DF={};KB.forEach(c=>{new Set(tok(c.t)).forEach(w=>DF[w]=(DF[w]||0)+1)});const N=KB.length;
+const idf=w=>Math.log(1+N/((DF[w]||0)+0.5));
+function expand(q){let ws=tok(q),out=[...ws];ws.forEach(w=>{if(SYN[w])out.push(...SYN[w].split(" "))});return out}
+function retrieve(q){
+ const qw=expand(q),qset=[...new Set(qw)];
+ const scored=KB.map(c=>{const ct=tok(c.t),cs=new Set(ct);let s=0,hits=[];
+  qset.forEach(w=>{if(cs.has(w)){s+=idf(w);hits.push(w)}else{const p=ct.find(x=>x.startsWith(w)&&w.length>3);if(p){s+=idf(p)*0.6;hits.push(p)}}});
+  const raw=s/Math.sqrt(ct.length+8);return{c,raw,hits}});
+ scored.sort((a,b)=>b.raw-a.raw);const top=scored.slice(0,5);
+ // rerank: boost chunks matching multiple distinct query terms (coverage), penalise generic skill lists
+ top.forEach(x=>{x.cov=new Set(x.hits).size/Math.max(1,qset.length);x.final=x.raw*(1+x.cov)*(x.c.id.startsWith("skills")?0.85:1)});
+ top.sort((a,b)=>b.final-a.final);return{qw:qset,cands:scored.slice(0,5),top:top.slice(0,3)};
+}
+const THRESH=0.09;
+function extractive(q,top){
+ const lead=top[0].c.t.split(/\.\s/)[0]+".";const extra=top.slice(1).filter(x=>x.final>THRESH).map(x=>"Also: "+x.c.t.split(/\.\s/)[0]+".");
+ return ["Based on my sources — "+lead,...extra].join("\n");
+}
+async function llmAnswer(q,top){
+ const s=JSON.parse(localStorage.getItem("yset")||"null");if(!s||!s.ep||!s.key)return null;
+ const ctx=top.map(x=>`[${x.c.id}] ${x.c.t}`).join("\n");
+ const r=await fetch(s.ep,{method:"POST",headers:{"Content-Type":"application/json",Authorization:"Bearer "+s.key},body:JSON.stringify({model:s.model||"route-llm",temperature:0.2,messages:[{role:"system",content:"You are Yash Bhardwaj's resume, speaking in first person. Answer ONLY from the provided context. Cite chunk ids in square brackets. If the context does not contain the answer, reply exactly: 'No evidence in my sources for that.' Be concise, specific, no fluff."},{role:"user",content:"Context:\n"+ctx+"\n\nQuestion: "+q}]})});
+ const j=await r.json();return j.choices?.[0]?.message?.content||null;
+}
+const hist=[];
+async function ask(qq){
+ const q=qq||document.getElementById("q").value.trim();if(!q)return;document.getElementById("q").value="";
+ addMsg(q,"u");const R=retrieve(q);renderRet(q,R);
+ let ans,nev=false;
+ if(R.top[0].final<THRESH){ans="No evidence in my sources for that. I only answer from my resume and project docs — ask me about production work, nanoinfer, RAG, voice AI, CV, or skills.";nev=true}
+ else{ans=await llmAnswer(q,R.top).catch(()=>null)||extractive(q,R.top)}
+ addMsg(ans,"b",nev?[]:R.top.filter(x=>x.final>THRESH*0.7).map(x=>x.c.id),nev);hist.push({q,a:ans});
+}
+function addMsg(t,who,cites=[],nev=false){const d=document.createElement("div");d.className="m "+who+(nev?" nev":"");d.textContent=t;
+ if(cites.length){const c=document.createElement("div");cites.forEach(id=>{const s=document.createElement("span");s.className="chip";s.textContent=id;s.onclick=()=>hl(id);c.appendChild(s)});d.appendChild(c)}
+ const m=document.getElementById("msgs");m.appendChild(d);m.scrollTop=m.scrollHeight}
+function hl(id){document.querySelectorAll(".chunk").forEach(e=>e.classList.toggle("hl",e.dataset.id===id));const e=document.querySelector('.chunk[data-id="'+id+'"]');e&&e.scrollIntoView({block:"center"})}
+function renderRet(q,R){const r=document.getElementById("ret");
+ r.innerHTML=`<h3>Retrieval panel</h3>
+ <div class="step"><b>1. Tokenize + expand</b><br><span class="mut">${R.qw.join(" · ")}</span></div>
+ <div class="step"><b>2. TF-IDF scoring (top 5 candidates)</b>${R.cands.map(x=>`<div class="chunk" data-id="${x.c.id}"><b>${x.c.id}</b> <span class="mut">${x.c.src}</span> — raw ${x.raw.toFixed(3)}<div class="bar"><i style="width:${Math.min(100,x.raw*300)}%"></i></div></div>`).join("")}</div>
+ <div class="step"><b>3. Rerank (coverage × source weight) → top 3</b>${R.top.map((x,i)=>`<div class="chunk ${i==0?"hl":""}" data-id="${x.c.id}"><b>#${i+1} ${x.c.id}</b> final ${x.final.toFixed(3)} · hits: ${[...new Set(x.hits)].join(", ")}<br><span class="mut">${x.c.t}</span></div>`).join("")}</div>
+ <div class="step"><b>4. Guardrail</b> — threshold ${THRESH}: top score ${R.top[0].final.toFixed(3)} → ${R.top[0].final<THRESH?'<span class="bad">REFUSE (no evidence)</span>':'<span class="ok">ANSWER</span>'}</div>`}
+["Did he deploy anything to production?","What's nanoinfer?","Does he know fine-tuning?","Any healthcare experience?","Where did he study?","Does he know Rust?","Voice AI latency?"].forEach(s=>{const e=document.createElement("span");e.textContent=s;e.onclick=()=>ask(s);document.getElementById("sug").appendChild(e)});
+document.getElementById("q").addEventListener("keydown",e=>{if(e.key==="Enter")ask()});
+// ---------- SHARE ----------
+function share(){if(!hist.length)return alert("Ask something first.");const u=location.origin+location.pathname+"#c="+btoa(unescape(encodeURIComponent(JSON.stringify(hist))));navigator.clipboard?.writeText(u);prompt("Share link copied:",u)}
+if(location.hash.startsWith("#c=")){try{JSON.parse(decodeURIComponent(escape(atob(location.hash.slice(3))))).forEach(h=>{addMsg(h.q,"u");addMsg(h.a,"b")});go("chat")}catch(e){}}
+// ---------- FIT SCORE ----------
+const SKILLS={"python":"skills-ops","pytorch":"skills-cv","tensorflow":"skills-cv","rag":"exp-sr-3","langchain":"skills-gen","langgraph":"exp-ss-5","llamaindex":"skills-gen","crewai":"exp-ss-5","agents":"exp-ss-5","agentic":"exp-ss-5","mcp":"skills-gen","vllm":"proj-nano-1","inference":"proj-nano-1","quantization":"proj-nano-1","cuda":"proj-nano-1","lora":"skills-gen","qlora":"skills-gen","fine-tuning":"skills-gen","finetuning":"skills-gen","peft":"skills-gen","transformers":"proj-nano-1","hugging face":"skills-cv","huggingface":"skills-cv","openai":"exp-sr-2","gpt-4":"exp-ss-1","claude":"skills-gen","azure":"edu","aws":"skills-ops","bedrock":"skills-ops","docker":"skills-ops","kubernetes":"skills-ops","fastapi":"proj-nano-2","flask":"exp-sr-1","sql":"skills-ops","postgresql":"skills-ops","mongodb":"skills-ops","redis":"skills-ops","pinecone":"exp-sr-3","faiss":"exp-sr-3","chromadb":"exp-sr-3","pgvector":"skills-ops","milvus":"skills-ops","vector database":"exp-sr-3","embeddings":"exp-sr-3","whisper":"exp-sr-2","speech":"exp-ss-2","voice":"exp-ss-2","twilio":"exp-ss-2","ocr":"exp-ss-3","computer vision":"exp-ss-4","yolo":"exp-ss-4","opencv":"skills-cv","object detection":"exp-ss-4","stable diffusion":"proj-llm","diffusion":"proj-llm","databricks":"exp-ss-6","pyspark":"exp-ss-6","spark":"exp-ss-6","kafka":"skills-ops","etl":"exp-ss-6","mlops":"proj-fin","ci/cd":"skills-ops","prompt engineering":"skills-gen","nlp":"skills-cv","spacy":"skills-cv","knowledge graph":"skills-gen","multi-agent":"exp-ss-5","streaming":"proj-nano-2","benchmark":"proj-nano-2","production":"exp-ss-1","healthcare":"exp-ss-3","fraud":"proj-fin","gcp":null,"rust":null,"go ":null,"golang":null,"java":null,"react":null,"javascript":null,"typescript":null,"scala":null,"spark ml":null,"snowflake":null,"airflow":null,"mlflow":null,"sagemaker":null,"vertex":null,"tensorrt":null,"triton":null,"jax":null,"c++":null,"reinforcement learning":null,"rlhf":null,"dpo":null,"terraform":null};
+function fit(){const jd=document.getElementById("jd").value.toLowerCase();if(!jd.trim())return;
+ const found=Object.keys(SKILLS).filter(k=>jd.includes(k));if(!found.length){document.getElementById("fitout").innerHTML='<div class="card">No recognisable skill keywords found in that JD.</div>';return}
+ const have=found.filter(k=>SKILLS[k]),miss=found.filter(k=>!SKILLS[k]);const pct=Math.round(100*have.length/found.length);
+ const years=(jd.match(/(\d+)\+?\s*(?:years|yrs)/)||[])[1];
+ document.getElementById("fitout").innerHTML=`<div class="grid"><div class="card"><h3>Match</h3><div class="big">${pct}%</div><span class="mut">${have.length}/${found.length} JD skills found in sources</span>${years?`<br><br>JD asks ${years}+ yrs · I have 1.8 yrs → ${+years<=2?'<span class="ok">within range</span>':'<span class="bad">gap: '+(years-1.8).toFixed(1)+' yrs — honest flag</span>'}`:""}</div>
+ <div class="card"><h3>Missing / no evidence</h3>${miss.length?miss.map(k=>`<span class="chip" style="border-color:var(--red);color:var(--red)">${k.trim()}</span>`).join(""):'<span class="ok">None detected</span>'}</div></div>
+ <div class="card"><h3>Matched with evidence</h3><table>${have.map(k=>{const c=KB.find(x=>x.id===SKILLS[k]);return`<tr><th>${k}</th><td><span class="chip">${c.id}</span> ${c.t.split(/\.\s/)[0]}.</td></tr>`}).join("")}</table></div>`}
+// ---------- EVAL ----------
+const EVAL=[{q:"Did he deploy anything to production?",exp:["exp-ss-1","exp-ss-2","exp-sr-1"]},{q:"What is nanoinfer?",exp:["proj-nano-1","proj-nano-2"]},{q:"Voice bot latency and call volume?",exp:["exp-ss-2"]},{q:"Healthcare or medical experience?",exp:["exp-ss-3"]},{q:"Computer vision work in pharma?",exp:["exp-ss-4"]},{q:"Which vector databases has he used?",exp:["exp-sr-3","skills-ops"]},{q:"Databricks ETL experience?",exp:["exp-ss-6"]},{q:"Where did he study and what certification?",exp:["edu"]},{q:"Fraud detection project?",exp:["proj-fin"]},{q:"Multi-agent systems?",exp:["exp-ss-5"]},{q:"Does he know Rust or Golang?",exp:[],refuse:true},{q:"What is his favourite food?",exp:[],refuse:true}];
+function runEval(){let pass=0;const rows=EVAL.map(e=>{const R=retrieve(e.q);const ids=R.top.map(x=>x.c.id);const refused=R.top[0].final<THRESH;
+ const ok=e.refuse?refused:(!refused&&e.exp.some(id=>ids.includes(id)));if(ok)pass++;
+ return`<tr><td>${e.q}</td><td>${e.refuse?"should REFUSE":e.exp.join(", ")}</td><td>${refused?"REFUSED":ids.join(", ")}<br><span class="mut">top ${R.top[0].final.toFixed(3)}</span></td><td class="${ok?"ok":"bad"}">${ok?"PASS":"FAIL"}</td></tr>`});
+ document.getElementById("evalout").innerHTML=`<div class="card"><div class="big">${pass}/${EVAL.length}</div><span class="mut">hit@3 + refusal accuracy · computed just now in your browser</span></div><div class="card"><table><tr><th>Question</th><th>Expected</th><th>Retrieved top-3</th><th></th></tr>${rows.join("")}</table></div>`}
+// ---------- SETTINGS / NAV ----------
+function saveSet(){localStorage.setItem("yset",JSON.stringify({ep:ep.value,key:key.value,model:model.value}));alert("Saved. Chat now uses live LLM generation over retrieved context.")}
+(()=>{const s=JSON.parse(localStorage.getItem("yset")||"null");if(s){ep.value=s.ep||"";key.value=s.key||"";model.value=s.model||""}})();
+function go(t){document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.t===t));document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===t))}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>go(b.dataset.t));
+</script>
+</body></html>
